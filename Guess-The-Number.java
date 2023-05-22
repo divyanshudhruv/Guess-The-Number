@@ -332,7 +332,7 @@ public class Guess_The_Number{
         //System.out.println("--------------------");
     }
 
-    public static void main(){
+    public static void main(String args[]){
         /* 
 
         @ menu() : Show The Menu For The Game
