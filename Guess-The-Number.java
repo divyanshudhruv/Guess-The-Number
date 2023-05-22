@@ -100,7 +100,6 @@ public class Guess_The_Number{
         br();
         switch(a){
             case 1: z+=1;break;
-            case 2: z=z;break;
         }
     }
 
@@ -127,7 +126,6 @@ public class Guess_The_Number{
         br();
         switch(a){
             case 1: z+=2;break;
-            case 2: z=z;break;
         }
 
     }
@@ -152,7 +150,6 @@ public class Guess_The_Number{
         br();
         switch(a){
             case 1: z+=4;break;
-            case 2: z=z;break;
         }
 
     }
@@ -182,7 +179,6 @@ public class Guess_The_Number{
         br();
         switch(a){
             case 1: z+=8;break;
-            case 2: z=z;break;
         }
 
     }
@@ -212,7 +208,6 @@ public class Guess_The_Number{
         br();
         switch(a){
             case 1: z+=16;break;
-            case 2: z=z;break;
         }
 
     }
@@ -236,7 +231,6 @@ public class Guess_The_Number{
         br();
         switch(a){
             case 1: z+=32;break;
-            case 2: z=z;break;
         }
 
     }
@@ -260,7 +254,6 @@ public class Guess_The_Number{
         br();
         switch(a){
             case 1: z+=64;break;
-            case 2: z=z;break;
         }
 
     }
