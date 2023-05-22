@@ -1,3 +1,11 @@
+
+/**
+ * A Simple Number Guessing Game
+ *
+ * @author (Divyanshu Dhruv)
+ * @version (0.1)
+ * @license (MIT)
+ */
 import java.util.*;
 
 public class Guess_The_Number{
@@ -15,6 +23,7 @@ public class Guess_The_Number{
     public Guess_The_Number(){
         z = 0;
         i = 0;
+
     }
 
     public void br(){
