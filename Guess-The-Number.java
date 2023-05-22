@@ -1,4 +1,3 @@
-
 /**
  * A Simple Number Guessing Game
  *
@@ -6,6 +5,7 @@
  * @version (0.1)
  * @license (MIT)
  */
+
 import java.util.*;
 
 public class Guess_The_Number{
