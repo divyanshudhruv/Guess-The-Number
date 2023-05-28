@@ -314,9 +314,7 @@ public class Guess_The_Number{
 
     public void exit() throws InterruptedException {
         System.out.println("--------------------");
-        Thread.sleep(500);
         System.out.println("Good Bye !");
-        Thread.sleep(500);
         System.out.println("--------------------");
         System.exit(0);
     }
@@ -330,22 +328,9 @@ public class Guess_The_Number{
     public void info() throws InterruptedException {
         System.out.println(" ");
         Thread.sleep(2000);
-
+        System.out.println("--------------------");
         System.out.println("Hello!");
         Thread.sleep(500);
-
-        System.out.print("I");
-        Thread.sleep(100);
-        System.out.print("n");
-        Thread.sleep(100);
-        System.out.print("f");
-        Thread.sleep(100);
-        System.out.print("o");
-        Thread.sleep(100);
-        System.out.print(":");
-        Thread.sleep(100);
-        System.out.print(" ");
-        Thread.sleep(100);
         System.out.print("T");
         Thread.sleep(100);
         System.out.print("h");
@@ -406,13 +391,61 @@ public class Guess_The_Number{
         Thread.sleep(100);
         System.out.println(".");
         Thread.sleep(500);
-        /*System.out.print("L");
+        System.out.print("P");
+        Thread.sleep(100);
+        System.out.print("l");
+        Thread.sleep(100);
+        System.out.print("s");
+        Thread.sleep(100);
+        System.out.print(" ");
+        Thread.sleep(100);
+        System.out.print("O");
+        Thread.sleep(100);
+        System.out.print("p");
         Thread.sleep(100);
         System.out.print("e");
         Thread.sleep(100);
-        System.out.print("t");
+        System.out.print("n");
+        Thread.sleep(100);
+        System.out.print(" ");
+        Thread.sleep(100);
+        System.out.print("I");
+        Thread.sleep(100);
+        System.out.print("n");
         Thread.sleep(100);
         System.out.print("s");
+        Thread.sleep(100);
+        System.out.print("t");
+        Thread.sleep(100);
+        System.out.print("r");
+        Thread.sleep(100);
+        System.out.print("u");
+        Thread.sleep(100);
+        System.out.print("c");
+        Thread.sleep(100);
+        System.out.print("t");
+        Thread.sleep(100);
+        System.out.print("i");
+        Thread.sleep(100);
+        System.out.print("o");
+        Thread.sleep(100);
+        System.out.print("n");
+        Thread.sleep(100);
+        System.out.print("s");
+        Thread.sleep(100); 
+        System.out.print(" ");
+        Thread.sleep(100);
+        System.out.print("B");
+        Thread.sleep(100);
+        System.out.print("e");
+        Thread.sleep(100);
+        System.out.print("f");
+        Thread.sleep(100);
+        System.out.print("o");
+        Thread.sleep(100);
+        System.out.print("r");
+        Thread.sleep(100);
+        System.out.print("e");
         Thread.sleep(100);
         System.out.print(" ");
         Thread.sleep(100);
@@ -424,11 +457,20 @@ public class Guess_The_Number{
         Thread.sleep(100);
         System.out.print("y");
         Thread.sleep(100);
-        System.out.print(" ");
+        System.out.print("i");
         Thread.sleep(100);
-        System.out.print("O(∩_∩)O");
-        Thread.sleep(100);*/
-        Thread.sleep(4000);
+        System.out.print("n");
+        Thread.sleep(100);
+        System.out.print("g");
+        Thread.sleep(100);
+        System.out.print(".");
+        Thread.sleep(100);
+        System.out.print(".");
+        Thread.sleep(100);
+        System.out.println(".");
+        Thread.sleep(100);
+        System.out.println("--------------------");
+        Thread.sleep(2000);
         System.out.println("\f");
         Thread.sleep(2000);
 
