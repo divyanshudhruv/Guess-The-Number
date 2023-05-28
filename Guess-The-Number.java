@@ -56,7 +56,7 @@ public class Guess_The_Number{
         }
 
         if(i==1 || i==2|| i==3){
-
+            // Nothing To Do ƪ(˘⌣˘)ʃ
         }
     }
 
@@ -300,7 +300,7 @@ public class Guess_The_Number{
         System.out.println("4) Avoid Entering Any Other Input");
         System.out.println("----------------------------------------------");
         System.out.println("");
-        System.out.println("INFO !) Automatically Redirecting In 8 Seconds");
+        System.out.println("Info !) Automatically Redirecting In 8 Seconds");
 
         try {
             Thread.sleep(8000);
@@ -308,13 +308,15 @@ public class Guess_The_Number{
             menu();
             start();
         }catch(InputMismatchException e){
-
+            //Nothing
         }
     }
 
-    public void exit(){
+    public void exit() throws InterruptedException {
         System.out.println("--------------------");
-        System.out.println("Thnx");
+        Thread.sleep(500);
+        System.out.println("Good Bye !");
+        Thread.sleep(500);
         System.out.println("--------------------");
         System.exit(0);
     }
@@ -323,6 +325,113 @@ public class Guess_The_Number{
         //System.out.println("--------------------");
         //System.out.println("Error!  Wrong Input!");
         //System.out.println("--------------------");
+    }
+
+    public void info() throws InterruptedException {
+        System.out.println(" ");
+        Thread.sleep(2000);
+
+        System.out.println("Hello!");
+        Thread.sleep(500);
+
+        System.out.print("I");
+        Thread.sleep(100);
+        System.out.print("n");
+        Thread.sleep(100);
+        System.out.print("f");
+        Thread.sleep(100);
+        System.out.print("o");
+        Thread.sleep(100);
+        System.out.print(":");
+        Thread.sleep(100);
+        System.out.print(" ");
+        Thread.sleep(100);
+        System.out.print("T");
+        Thread.sleep(100);
+        System.out.print("h");
+        Thread.sleep(100);
+        System.out.print("i");
+        Thread.sleep(100);
+        System.out.print("s");
+        Thread.sleep(100);
+        System.out.print(" ");
+        Thread.sleep(100);
+        System.out.print("G");
+        Thread.sleep(100);
+        System.out.print("a");
+        Thread.sleep(100);
+        System.out.print("m");
+        Thread.sleep(100);
+        System.out.print("e");
+        Thread.sleep(100);
+        System.out.print(" ");
+        Thread.sleep(100);
+        System.out.print("M");
+        Thread.sleep(100);
+        System.out.print("a");
+        Thread.sleep(100);
+        System.out.print("y");
+        Thread.sleep(100);
+        System.out.print(" ");
+        Thread.sleep(100);
+        System.out.print("B");
+        Thread.sleep(100); 
+        System.out.print("e");
+        Thread.sleep(100);
+        System.out.print(" ");
+        Thread.sleep(100);
+        System.out.print("Q");
+        Thread.sleep(100);
+        System.out.print("u");
+        Thread.sleep(100);
+        System.out.print("i");
+        Thread.sleep(100);
+        System.out.print("t");
+        Thread.sleep(100);
+        System.out.print("e");
+        Thread.sleep(100);
+        System.out.print(" ");
+        Thread.sleep(100);
+        System.out.print("L");
+        Thread.sleep(100);
+        System.out.print("o");
+        Thread.sleep(100);
+        System.out.print("n");
+        Thread.sleep(100);
+        System.out.print("g");
+        Thread.sleep(100);
+        System.out.print(".");
+        Thread.sleep(100);
+        System.out.print(".");
+        Thread.sleep(100);
+        System.out.println(".");
+        Thread.sleep(500);
+        /*System.out.print("L");
+        Thread.sleep(100);
+        System.out.print("e");
+        Thread.sleep(100);
+        System.out.print("t");
+        Thread.sleep(100);
+        System.out.print("s");
+        Thread.sleep(100);
+        System.out.print(" ");
+        Thread.sleep(100);
+        System.out.print("P");
+        Thread.sleep(100);
+        System.out.print("l");
+        Thread.sleep(100);
+        System.out.print("a");
+        Thread.sleep(100);
+        System.out.print("y");
+        Thread.sleep(100);
+        System.out.print(" ");
+        Thread.sleep(100);
+        System.out.print("O(∩_∩)O");
+        Thread.sleep(100);*/
+        Thread.sleep(4000);
+        System.out.println("\f");
+        Thread.sleep(2000);
+
     }
 
     public static void main(String []args){
@@ -347,12 +456,14 @@ public class Guess_The_Number{
         @ instruction() : Display Instruction Of The Game
         @ exit() : Exit The Game
         @ error() : Show Error Message
+        @ info() : Display Info Message
 
         @ main() : Compile And Run The Program
 
          */
         try
         {
+            new Guess_The_Number().info();
             new Guess_The_Number().menu();
             new Guess_The_Number().start();
         }
