@@ -26,9 +26,9 @@
 <br>
 
 # 🚧 Version
-> v0.1 **`Published`** **`22|May|2023`**
+> v0.1 **`Published`**  @  **`22|5|2023`**
 
-> v0.2 **`Published`** **`31|May|2023`**
+> v0.2 **`Published`**  @  **`31|5|2023`**
 
 <br>
 
