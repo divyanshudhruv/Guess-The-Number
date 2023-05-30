@@ -40,8 +40,7 @@ public class Guess_The_Number{
 
     public void start() throws InterruptedException {
         Scanner in = new Scanner(System.in);
-        i = in.nextInt();
-
+        i = in.nextInt();        
         switch(i){
 
             case 1: play(); 
@@ -77,10 +76,12 @@ public class Guess_The_Number{
 
     public void _1(){  
         System.out.println("----------------------------------------------");
-        msg();
+        msg(); // Applicable To Only _1();
         br();
         System.out.println("Is Your Number Here?");
+        
         br();
+        
         System.out.println("01,  03,  05,  07,  09,");
         System.out.println("11,  13,  15,  17,  19,");
         System.out.println("21,  23,  25,  27,  29,");
@@ -91,10 +92,18 @@ public class Guess_The_Number{
         System.out.println("71,  73,  75,  77,  79,");
         System.out.println("81,  83,  85,  87,  89,");
         System.out.println("91,  93,  95,  97,  99,");
+        
         br();
+        
         System.out.print("Type Your Answer:");
         Scanner in = new Scanner(System.in);
         a = in.nextInt();
+
+        while(a>1){
+            System.out.print("Error! Input Again: ");
+            a = in.nextInt();
+        }
+        
         System.out.println("----------------------------------------------");
         br();
         br();
@@ -106,7 +115,9 @@ public class Guess_The_Number{
     public void _2(){    
         System.out.println("----------------------------------------------");
         System.out.println("Is Your Number Here?");
+        
         br();
+        
         System.out.println("02,  03,  06,  07,  10,");
         System.out.println("11,  14,  15,  18,  19,");
         System.out.println("22,  23,  26,  27,  30,");
@@ -117,10 +128,18 @@ public class Guess_The_Number{
         System.out.println("71,  74,  75,  78,  79,");
         System.out.println("82,  83,  86,  87,  90,");
         System.out.println("91,  94,  95,  98,  99,");
+        
         br();
+        
         System.out.print("Type Your Answer:");
         Scanner in = new Scanner(System.in);
         a = in.nextInt();
+
+        while(a>1){
+            System.out.print("Error! Input Again: ");
+            a = in.nextInt();
+        }
+        
         System.out.println("----------------------------------------------");
         br();
         br();
@@ -133,7 +152,9 @@ public class Guess_The_Number{
     public void _3(){
         System.out.println("----------------------------------------------");
         System.out.println("Is Your Number Here?");
+        
         br();
+        
         System.out.println("04,  05,  06,  07,  12,  13,  14,");
         System.out.println("15,  20,  21,  22,  23,  28,  29,");
         System.out.println("30,  31,  36,  37,  38,  39,  44,");
@@ -141,10 +162,18 @@ public class Guess_The_Number{
         System.out.println("60,  61,  62,  63,  68,  69,  70,");
         System.out.println("71,  76,  77,  78,  79,  84,  85,");
         System.out.println("86,  87,  92,  93,  94,  95,");
+        
         br();
+        
         System.out.print("Type Your Answer:");
         Scanner in = new Scanner(System.in);
         a = in.nextInt();
+
+        while(a>1){
+            System.out.print("Error! Input Again: ");
+            a = in.nextInt();
+        }
+        
         System.out.println("----------------------------------------------");
         br();
         br();
@@ -157,7 +186,9 @@ public class Guess_The_Number{
     public void _4(){
         System.out.println("----------------------------------------------");
         System.out.println("Is Your Number Here?");
+        
         br();
+        
         System.out.println("08,  09,  10,  11,");
         System.out.println("12,  13,  14,  15,");
         System.out.println("24,  25,  26,  27,");
@@ -170,10 +201,18 @@ public class Guess_The_Number{
         System.out.println("76,  77,  78,  79,");
         System.out.println("88,  89,  90,  91,");
         System.out.println("92,  93,  94,  95,");
+        
         br();
+        
         System.out.print("Type Your Answer:");
         Scanner in = new Scanner(System.in);
         a = in.nextInt();
+
+        while(a>1){
+            System.out.print("Error! Input Again: ");
+            a = in.nextInt();
+        }
+        
         System.out.println("----------------------------------------------");
         br();
         br();
@@ -186,7 +225,9 @@ public class Guess_The_Number{
     public void _5(){
         System.out.println("----------------------------------------------");
         System.out.println("Is Your Number Here?");
+        
         br();
+        
         System.out.println("16,  17,  18,  19,");
         System.out.println("20,  21,  22,  23,");
         System.out.println("24,  25,  26,  27,");
@@ -199,10 +240,18 @@ public class Guess_The_Number{
         System.out.println("84,  85,  86,  87,");
         System.out.println("88,  89,  90,  91,");
         System.out.println("92,  93,  94,  95,");
+        
         br();
+        
         System.out.print("Type Your Answer:");
         Scanner in = new Scanner(System.in);
         a = in.nextInt();
+
+        while(a>1){
+            System.out.print("Error! Input Again: ");
+            a = in.nextInt();
+        }
+        
         System.out.println("----------------------------------------------");
         br();
         br();
@@ -215,17 +264,27 @@ public class Guess_The_Number{
     public void _6(){
         System.out.println("----------------------------------------------");
         System.out.println("Is Your Number Here?");
+        
         br();
+        
         System.out.println("32,  33,  34,  35,  36,  37,");
         System.out.println("38,  39,  40,  41,  42,  43,");
         System.out.println("44,  45,  46,  47,  48,  49,");
         System.out.println("50,  51,  52,  53,  54,  55,");
         System.out.println("56,  57,  58,  59,  60,  61,");
         System.out.println("62,  63,  96,  97,  98,  99,");
+        
         br();
+        
         System.out.print("Type Your Answer:");
         Scanner in = new Scanner(System.in);
         a = in.nextInt();
+
+        while(a>1){
+            System.out.print("Error! Input Again: ");
+            a = in.nextInt();
+        }
+        
         System.out.println("----------------------------------------------");
         br();
         br();
@@ -238,17 +297,27 @@ public class Guess_The_Number{
     public void _7(){
         System.out.println("----------------------------------------------");
         System.out.println("Is Your Number Here?");
+        
         br();
+        
         System.out.println("64,  65,  66,  67,  68,  69,");
         System.out.println("70,  71,  72,  73,  74,  75,");
         System.out.println("76,  77,  78,  79,  80,  81,");
         System.out.println("82,  83,  84,  85,  86,  87,");
         System.out.println("88,  89,  90,  91,  92,  93,");
         System.out.println("94,  95,  96,  97,  98,  99,");
+        
         br();
+        
         System.out.print("Type Your Answer:");
         Scanner in = new Scanner(System.in);
         a = in.nextInt();
+
+        while(a>1){
+            System.out.print("Error! Input Again: ");
+            a = in.nextInt();
+        }
+        
         System.out.println("----------------------------------------------");
         br();
         br();
@@ -473,7 +542,6 @@ public class Guess_The_Number{
         Thread.sleep(2000);
         System.out.println("\f");
         Thread.sleep(2000);
-
     }
 
     public static void main(String []args){
