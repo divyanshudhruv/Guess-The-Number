@@ -26,7 +26,7 @@
 <br>
 
 # 🚧 Version
-> v0.1 **`To Be Published`**
+> v0.1 **`Published`**
 
 <br>
 
