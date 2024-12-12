@@ -1,36 +1,23 @@
-/** 
+/**
  * A Simple Number Guessing Game
  *
  * @author (Divyanshu Dhruv)
- * @version (0.2)
- * @license (MIT)
  */
 
-import java.util.*;
+import java.util.Scanner;
+import java.util.Arrays;
 
-public class Guess_The_Number{
+public class GuessTheNumber {
 
-    int z; // Add The First Number Of Each Method
-    int i; // Makes Program Run: (Infinite Times)
-    int a; // Accepting The 1st Input
-    int b; // Accepting The 2nd Input
-    int c; // Accepting The 3rd Input
-    int d; // Accepting The 4th Input
-    int e; // Accepting The 5th Input
-    int f; // Accepting The 6th Input
-    int g; // Accepting The 7th Input
+    private int z; // The guessed number
+    private final Scanner scanner;
 
-    public Guess_The_Number(){
+    public GuessTheNumber() {
         z = 0;
-        i = 0;
-
+        scanner = new Scanner(System.in);
     }
 
-    public void br(){
-        System.out.println();
-    }
-
-    public void menu(){
+    public void displayMenu() {
         System.out.println("--------------------");
         System.out.println("1) Play Game");
         System.out.println("2) Instructions");
@@ -38,549 +25,75 @@ public class Guess_The_Number{
         System.out.println("--------------------");
     }
 
-    public void start() throws InterruptedException {
-        Scanner in = new Scanner(System.in);
-        i = in.nextInt();        
-        switch(i){
-
-            case 1: play(); 
-                i+=1;;
-                break;
-            case 2: instruction();
-                i+=2;
-                break;
-            case 3: exit();
-                i+=3;
-                break;
-        }
-
-        if(i==1 || i==2|| i==3){
-            // Nothing To Do ƪ(˘⌣˘)ʃ
+    public void start() {
+        
+        while (true) {
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+            switch (choice) {
+                case 1 : playGame();
+                case 2 : showInstructions();
+                case 3 : {
+                    System.out.println("Exiting the game. Goodbye!");
+                    System.exit(0);
+                }
+                default : System.out.println("Invalid choice. Please try again.");
+            }
         }
     }
 
-    public void play() throws InterruptedException {
-        _1();
-        _2();
-        _3();
-        _4();
-        _5();
-        _6();
-        _7();
-        calc();
-    }
+    private void playGame() {
+        z = 0;
+        int[][] numberSets = {
+                {1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99},
+                {2, 3, 6, 7, 10, 11, 14, 15, 18, 19, 22, 23, 26, 27, 30, 31, 34, 35, 38, 39, 42, 43, 46, 47, 50, 51, 54, 55, 58, 59, 62, 63, 66, 67, 70, 71, 74, 75, 78, 79, 82, 83, 86, 87, 90, 91, 94, 95, 98, 99},
+                {4, 5, 6, 7, 12, 13, 14, 15, 20, 21, 22, 23, 28, 29, 30, 31, 36, 37, 38, 39, 44, 45, 46, 47, 52, 53, 54, 55, 60, 61, 62, 63, 68, 69, 70, 71, 76, 77, 78, 79, 84, 85, 86, 87, 92, 93, 94, 95},
+                {8, 9, 10, 11, 12, 13, 14, 15, 24, 25, 26, 27, 28, 29, 30, 31, 40, 41, 42, 43, 44, 45, 46, 47, 56, 57, 58, 59, 60, 61, 62, 63, 72, 73, 74, 75, 76, 77, 78, 79, 88, 89, 90, 91, 92, 93, 94, 95},
+                {16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95},
+                {32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 96, 97, 98, 99},
+                {64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99}
+        };
 
-    public void msg(){
-        System.out.println("Choose A Number Between 1 And 99 And Keep It In Your Mind.");
-    }
-
-    public void _1(){  
-        System.out.println("----------------------------------------------");
-        msg(); // Applicable To Only _1();
-        br();
-        System.out.println("Is Your Number Here?");
-        
-        br();
-        
-        System.out.println("01,  03,  05,  07,  09,");
-        System.out.println("11,  13,  15,  17,  19,");
-        System.out.println("21,  23,  25,  27,  29,");
-        System.out.println("31,  33,  35,  37,  39,");
-        System.out.println("41,  43,  45,  47,  49,");
-        System.out.println("51,  53,  55,  57,  59,");
-        System.out.println("61,  63,  65,  67,  69,");
-        System.out.println("71,  73,  75,  77,  79,");
-        System.out.println("81,  83,  85,  87,  89,");
-        System.out.println("91,  93,  95,  97,  99,");
-        
-        br();
-        
-        System.out.print("Type Your Answer:");
-        Scanner in = new Scanner(System.in);
-        a = in.nextInt();
-
-        while(a>1){
-            System.out.print("Error! Input Again: ");
-            a = in.nextInt();
+        for (int i = 0; i < numberSets.length; i++) {
+            System.out.println("Is your number in this set?");
+            printCube(numberSets[i]);
+            System.out.print("Enter 1 for Yes, 0 for No: ");
+            int answer = scanner.nextInt();
+            if (answer == 1) {
+                z += (1 << i); // Add 2^i to z
+            }
         }
-        
-        System.out.println("----------------------------------------------");
-        br();
-        br();
-        switch(a){
-            case 1: z+=1;break;
-        }
-    }
-
-    public void _2(){    
-        System.out.println("----------------------------------------------");
-        System.out.println("Is Your Number Here?");
-        
-        br();
-        
-        System.out.println("02,  03,  06,  07,  10,");
-        System.out.println("11,  14,  15,  18,  19,");
-        System.out.println("22,  23,  26,  27,  30,");
-        System.out.println("31,  34,  35,  38,  39,");
-        System.out.println("42,  43,  46,  47,  50,");
-        System.out.println("51,  54,  55,  58,  59,");
-        System.out.println("62,  63,  66,  67,  70,");
-        System.out.println("71,  74,  75,  78,  79,");
-        System.out.println("82,  83,  86,  87,  90,");
-        System.out.println("91,  94,  95,  98,  99,");
-        
-        br();
-        
-        System.out.print("Type Your Answer:");
-        Scanner in = new Scanner(System.in);
-        a = in.nextInt();
-
-        while(a>1){
-            System.out.print("Error! Input Again: ");
-            a = in.nextInt();
-        }
-        
-        System.out.println("----------------------------------------------");
-        br();
-        br();
-        switch(a){
-            case 1: z+=2;break;
-        }
-
-    }
-
-    public void _3(){
-        System.out.println("----------------------------------------------");
-        System.out.println("Is Your Number Here?");
-        
-        br();
-        
-        System.out.println("04,  05,  06,  07,  12,  13,  14,");
-        System.out.println("15,  20,  21,  22,  23,  28,  29,");
-        System.out.println("30,  31,  36,  37,  38,  39,  44,");
-        System.out.println("45,  46,  47,  52,  53,  54,  55,");
-        System.out.println("60,  61,  62,  63,  68,  69,  70,");
-        System.out.println("71,  76,  77,  78,  79,  84,  85,");
-        System.out.println("86,  87,  92,  93,  94,  95,");
-        
-        br();
-        
-        System.out.print("Type Your Answer:");
-        Scanner in = new Scanner(System.in);
-        a = in.nextInt();
-
-        while(a>1){
-            System.out.print("Error! Input Again: ");
-            a = in.nextInt();
-        }
-        
-        System.out.println("----------------------------------------------");
-        br();
-        br();
-        switch(a){
-            case 1: z+=4;break;
-        }
-
-    }
-
-    public void _4(){
-        System.out.println("----------------------------------------------");
-        System.out.println("Is Your Number Here?");
-        
-        br();
-        
-        System.out.println("08,  09,  10,  11,");
-        System.out.println("12,  13,  14,  15,");
-        System.out.println("24,  25,  26,  27,");
-        System.out.println("28,  29,  30,  31,");
-        System.out.println("40,  41,  42,  43,");
-        System.out.println("44,  45,  46,  47,");
-        System.out.println("56,  57,  58,  59,");
-        System.out.println("60,  61,  62,  63,");
-        System.out.println("72,  73,  74,  75,");
-        System.out.println("76,  77,  78,  79,");
-        System.out.println("88,  89,  90,  91,");
-        System.out.println("92,  93,  94,  95,");
-        
-        br();
-        
-        System.out.print("Type Your Answer:");
-        Scanner in = new Scanner(System.in);
-        a = in.nextInt();
-
-        while(a>1){
-            System.out.print("Error! Input Again: ");
-            a = in.nextInt();
-        }
-        
-        System.out.println("----------------------------------------------");
-        br();
-        br();
-        switch(a){
-            case 1: z+=8;break;
-        }
-
-    }
-
-    public void _5(){
-        System.out.println("----------------------------------------------");
-        System.out.println("Is Your Number Here?");
-        
-        br();
-        
-        System.out.println("16,  17,  18,  19,");
-        System.out.println("20,  21,  22,  23,");
-        System.out.println("24,  25,  26,  27,");
-        System.out.println("28,  29,  30,  31,");
-        System.out.println("48,  49,  50,  51,");
-        System.out.println("52,  53,  54,  55,");
-        System.out.println("56,  57,  58,  59,");
-        System.out.println("60,  61,  62,  63,");
-        System.out.println("80,  81,  82,  83,");
-        System.out.println("84,  85,  86,  87,");
-        System.out.println("88,  89,  90,  91,");
-        System.out.println("92,  93,  94,  95,");
-        
-        br();
-        
-        System.out.print("Type Your Answer:");
-        Scanner in = new Scanner(System.in);
-        a = in.nextInt();
-
-        while(a>1){
-            System.out.print("Error! Input Again: ");
-            a = in.nextInt();
-        }
-        
-        System.out.println("----------------------------------------------");
-        br();
-        br();
-        switch(a){
-            case 1: z+=16;break;
-        }
-
-    }
-
-    public void _6(){
-        System.out.println("----------------------------------------------");
-        System.out.println("Is Your Number Here?");
-        
-        br();
-        
-        System.out.println("32,  33,  34,  35,  36,  37,");
-        System.out.println("38,  39,  40,  41,  42,  43,");
-        System.out.println("44,  45,  46,  47,  48,  49,");
-        System.out.println("50,  51,  52,  53,  54,  55,");
-        System.out.println("56,  57,  58,  59,  60,  61,");
-        System.out.println("62,  63,  96,  97,  98,  99,");
-        
-        br();
-        
-        System.out.print("Type Your Answer:");
-        Scanner in = new Scanner(System.in);
-        a = in.nextInt();
-
-        while(a>1){
-            System.out.print("Error! Input Again: ");
-            a = in.nextInt();
-        }
-        
-        System.out.println("----------------------------------------------");
-        br();
-        br();
-        switch(a){
-            case 1: z+=32;break;
-        }
-
-    }
-
-    public void _7(){
-        System.out.println("----------------------------------------------");
-        System.out.println("Is Your Number Here?");
-        
-        br();
-        
-        System.out.println("64,  65,  66,  67,  68,  69,");
-        System.out.println("70,  71,  72,  73,  74,  75,");
-        System.out.println("76,  77,  78,  79,  80,  81,");
-        System.out.println("82,  83,  84,  85,  86,  87,");
-        System.out.println("88,  89,  90,  91,  92,  93,");
-        System.out.println("94,  95,  96,  97,  98,  99,");
-        
-        br();
-        
-        System.out.print("Type Your Answer:");
-        Scanner in = new Scanner(System.in);
-        a = in.nextInt();
-
-        while(a>1){
-            System.out.print("Error! Input Again: ");
-            a = in.nextInt();
-        }
-        
-        System.out.println("----------------------------------------------");
-        br();
-        br();
-        switch(a){
-            case 1: z+=64;break;
-        }
-
-    }
-
-    public void calc() throws InterruptedException {
-        try {
-            System.out.println("--------------------");
-            System.out.print("Ok");
-            Thread.sleep(400);
-            System.out.print(".");
-            Thread.sleep(400);
-            System.out.print(".");
-            Thread.sleep(400);
-            System.out.println(".");
-            Thread.sleep(400);
-            System.out.print("Calculating");
-            Thread.sleep(400);
-            System.out.print(".");
-            Thread.sleep(400);
-            System.out.print(".");
-            Thread.sleep(400);
-            System.out.println(".");
-            Thread.sleep(400);
-            System.out.print("Done");
-            Thread.sleep(400);
-            System.out.print(".");
-            Thread.sleep(400);
-            System.out.print(".");
-            Thread.sleep(400);
-            System.out.println(".");
-            Thread.sleep(400);
-            System.out.println("Your number is "+z);
-            System.out.println("--------------------");
-        }catch(InputMismatchException e){
-            System.out.println("Error!");
-        }
-    }
-
-    public void instruction() throws InterruptedException {
-        System.out.println("----------------------------------------------");
-        System.out.println("1) You Will Be Asked 7 'Yes-No' Questions");
-        System.out.println("2) If Your Answer Is Yes, Type 1");
-        System.out.println("3) If Your Answer Is No, Type 0");
-        System.out.println("4) Avoid Entering Any Other Input");
-        System.out.println("----------------------------------------------");
-        System.out.println("");
-        System.out.println("Info !) Automatically Redirecting In 8 Seconds");
-
-        try {
-            Thread.sleep(8000);
-            System.out.println("\f");
-            menu();
-            start();
-        }catch(InputMismatchException e){
-            //Nothing
-        }
-    }
-
-    public void exit() throws InterruptedException {
-        System.out.println("--------------------");
-        System.out.println("Good Bye !");
-        System.out.println("--------------------");
+        System.out.println("Your number is: " + z);
         System.exit(0);
     }
 
-    public void error(){
-        //System.out.println("--------------------");
-        //System.out.println("Error!  Wrong Input!");
-        //System.out.println("--------------------");
+    private void printCube(int[] numbers) {
+        int size = (int) Math.ceil(Math.cbrt(numbers.length));
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                for (int k = 0; k < size; k++) {
+                    int index = i * size * size + j * size + k;
+                    if (index < numbers.length) {
+                        System.out.printf("%3d ", numbers[index]);
+                    } else {
+                        System.out.print("    ");
+                    }
+                }
+                System.out.println();
+            }
+            System.out.println();
+        }
     }
 
-    public void info() throws InterruptedException {
-        System.out.println(" ");
-        Thread.sleep(2000);
-        System.out.println("--------------------");
-        System.out.println("Hello!");
-        Thread.sleep(500);
-        System.out.print("T");
-        Thread.sleep(100);
-        System.out.print("h");
-        Thread.sleep(100);
-        System.out.print("i");
-        Thread.sleep(100);
-        System.out.print("s");
-        Thread.sleep(100);
-        System.out.print(" ");
-        Thread.sleep(100);
-        System.out.print("G");
-        Thread.sleep(100);
-        System.out.print("a");
-        Thread.sleep(100);
-        System.out.print("m");
-        Thread.sleep(100);
-        System.out.print("e");
-        Thread.sleep(100);
-        System.out.print(" ");
-        Thread.sleep(100);
-        System.out.print("M");
-        Thread.sleep(100);
-        System.out.print("a");
-        Thread.sleep(100);
-        System.out.print("y");
-        Thread.sleep(100);
-        System.out.print(" ");
-        Thread.sleep(100);
-        System.out.print("B");
-        Thread.sleep(100); 
-        System.out.print("e");
-        Thread.sleep(100);
-        System.out.print(" ");
-        Thread.sleep(100);
-        System.out.print("Q");
-        Thread.sleep(100);
-        System.out.print("u");
-        Thread.sleep(100);
-        System.out.print("i");
-        Thread.sleep(100);
-        System.out.print("t");
-        Thread.sleep(100);
-        System.out.print("e");
-        Thread.sleep(100);
-        System.out.print(" ");
-        Thread.sleep(100);
-        System.out.print("L");
-        Thread.sleep(100);
-        System.out.print("o");
-        Thread.sleep(100);
-        System.out.print("n");
-        Thread.sleep(100);
-        System.out.print("g");
-        Thread.sleep(100);
-        System.out.print(".");
-        Thread.sleep(100);
-        System.out.print(".");
-        Thread.sleep(100);
-        System.out.println(".");
-        Thread.sleep(500);
-        System.out.print("P");
-        Thread.sleep(100);
-        System.out.print("l");
-        Thread.sleep(100);
-        System.out.print("s");
-        Thread.sleep(100);
-        System.out.print(" ");
-        Thread.sleep(100);
-        System.out.print("O");
-        Thread.sleep(100);
-        System.out.print("p");
-        Thread.sleep(100);
-        System.out.print("e");
-        Thread.sleep(100);
-        System.out.print("n");
-        Thread.sleep(100);
-        System.out.print(" ");
-        Thread.sleep(100);
-        System.out.print("I");
-        Thread.sleep(100);
-        System.out.print("n");
-        Thread.sleep(100);
-        System.out.print("s");
-        Thread.sleep(100);
-        System.out.print("t");
-        Thread.sleep(100);
-        System.out.print("r");
-        Thread.sleep(100);
-        System.out.print("u");
-        Thread.sleep(100);
-        System.out.print("c");
-        Thread.sleep(100);
-        System.out.print("t");
-        Thread.sleep(100);
-        System.out.print("i");
-        Thread.sleep(100);
-        System.out.print("o");
-        Thread.sleep(100);
-        System.out.print("n");
-        Thread.sleep(100);
-        System.out.print("s");
-        Thread.sleep(100); 
-        System.out.print(" ");
-        Thread.sleep(100);
-        System.out.print("B");
-        Thread.sleep(100);
-        System.out.print("e");
-        Thread.sleep(100);
-        System.out.print("f");
-        Thread.sleep(100);
-        System.out.print("o");
-        Thread.sleep(100);
-        System.out.print("r");
-        Thread.sleep(100);
-        System.out.print("e");
-        Thread.sleep(100);
-        System.out.print(" ");
-        Thread.sleep(100);
-        System.out.print("P");
-        Thread.sleep(100);
-        System.out.print("l");
-        Thread.sleep(100);
-        System.out.print("a");
-        Thread.sleep(100);
-        System.out.print("y");
-        Thread.sleep(100);
-        System.out.print("i");
-        Thread.sleep(100);
-        System.out.print("n");
-        Thread.sleep(100);
-        System.out.print("g");
-        Thread.sleep(100);
-        System.out.print(".");
-        Thread.sleep(100);
-        System.out.print(".");
-        Thread.sleep(100);
-        System.out.println(".");
-        Thread.sleep(100);
-        System.out.println("--------------------");
-        Thread.sleep(2000);
-        System.out.println("\f");
-        Thread.sleep(2000);
+    private void showInstructions() {
+        System.out.println("Instructions:");
+        System.out.println("1. Think of a number between 1 and 99.");
+        System.out.println("2. Answer the questions with '1' for Yes and '0' for No.");
+        System.out.println("3. The program will guess your number!");
     }
 
-    public static void main(String []args){
-        /* 
-
-        @ menu() : Show The Menu For The Game
-        @ start() : Get User Input And Do The Next Function
-        @ play() : Start The Game
-
-        @ msg() : Display The Message
-        @ br() : To Leave A Line (break)
-
-        @ _1() : Get User Input For The 1st List
-        @ _2() : Get User Input For The 2nd List
-        @ _3() : Get User Input For The 3rd List
-        @ _4() : Get User Input For The 4th List
-        @ _5() : Get User Input For The 5th List
-        @ _6() : Get User Input For The 6th List
-        @ _7() : Get User Input For The 7th List
-
-        @ calc() : To Calculate And Disply The Number
-        @ instruction() : Display Instruction Of The Game
-        @ exit() : Exit The Game
-        @ error() : Show Error Message
-        @ info() : Display Info Message
-
-        @ main() : Compile And Run The Program
-
-         */
-        try
-        {
-            new Guess_The_Number().info();
-            new Guess_The_Number().menu();
-            new Guess_The_Number().start();
-        }
-        catch (InterruptedException ie)
-        {
-            ie.printStackTrace();
-        }
-
+    public static void main(String[] args) {
+        new GuessTheNumber().displayMenu();
+        new GuessTheNumber().start();
     }
 }
